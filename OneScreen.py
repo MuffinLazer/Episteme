@@ -5,14 +5,13 @@ from libcamera import Transform
 import cv2
 import serial
 import threading
-import os
+import BootUp
 sensortxt = ""
 fpscounter = 0
 fpsdisplay = 0
 #libary slop 2 eletric boogaloo
 
-os.system("python3 BootUp.py")
-time.sleep(5)
+BootUp.Startscreen()
 
 def readserial(): # this is a better way to read serial as it runs a fuction that outputs a global string
     global sensortxt
