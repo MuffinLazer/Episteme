@@ -86,5 +86,4 @@ except KeyboardInterrupt: #this is so it can be shut down from terminal as well
     print("SHUTTING DOWN")
 picam1.close()
 picam2.close()
-cursor.show()
 sys.exit()
