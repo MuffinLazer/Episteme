@@ -71,11 +71,9 @@ try:
                 framefinal = cv2.resize(framecombined, (1024,600), interpolation=cv2.INTER_LINEAR) # there's a few versions of interpo lation but this one takes a weighted average 2by2 area of pixel and averages them
                 				
                 if sensortxt: #if we get data, it outputs it onto the onescreen using "putText"
-                    cv2.putText(framefinal, f"SDATA: {sensortxt}", (10,30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 120, 40), 2)
+                    cv2.putText(framefinal, f"DATA: {sensortxt}", (10,30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 120, 40), 2)
                 if fpsdisplay: # these if statements are so it doesn't explode if there is no data   
-                    cv2.putText(framefinal, f"FPS: {fpsdisplay}", (920 ,30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 120, 40), 2)
+                    cv2.putText(framefinal, f"FPS: {fpsdisplay}", (920 ,30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 120, 40), 2)
                 
                 cv2.imshow(WindowName, framefinal)
             if cv2.waitKey(1) & 0xFF == ord('q'):
