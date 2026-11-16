@@ -2,6 +2,7 @@ import cv2
 import sys
 from PIL import ImageFont, ImageDraw, Image
 import numpy as np
+import time
 
 text = "INITIALIZING"
 

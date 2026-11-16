@@ -11,7 +11,8 @@ fpscounter = 0
 fpsdisplay = 0
 #libary slop 2 eletric boogaloo
 
-os.system("BootUp.py")
+os.system("python3 BootUp.py")
+time.sleep(5)
 
 def readserial(): # this is a better way to read serial as it runs a fuction that outputs a global string
     global sensortxt
