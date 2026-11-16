@@ -11,7 +11,7 @@ fpscounter = 0
 fpsdisplay = 0
 #libary slop 2 eletric boogaloo
 
-BootUp.Startscreen()
+BootUp.Startscreen() # runs the other file while loading this one, sort as of a start screen
 
 def readserial(): # this is a better way to read serial as it runs a fuction that outputs a global string
     global sensortxt
