@@ -6,8 +6,8 @@ import time
 import cursor
 
 def Startscreen():  
-    text = "INITIALIZING"
-try:
+    try:
+        text = "INITIALIZING"
         cursor.hide()
         currenttime = time.monotonic()
         currenttime = int(currenttime) # monotonic time gives me the time of the clock in seconds in a float, which is super helpful as it lets us do basic math to find future time
@@ -40,6 +40,6 @@ try:
             currenttime = int(time.monotonic()) # maff
             if cv2.waitKey(1) & currenttime >= futuretime: # turns out you really need cv2.waitkey(1), like a lot
                 break 
-except KeyboardInterrupt:
+    except KeyboardInterrupt:
         print("SHUTTING DOWN BOOTUP PROCCESS")
         sys.exit() # W LARPING
