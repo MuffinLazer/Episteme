@@ -8,7 +8,7 @@ text = "INITIALIZING"
 try:
     canvas = cv2.imread("Resources/canvas.png")
 
-    font = ImageFont.truetype("Resources/Ethnocentric-Regular.otf", 80)
+    font = ImageFont.truetype("Resources/Ethnocentric-Regular.otf", 70)
     
     WindowName = "CAMS"
     cv2.namedWindow(WindowName, cv2.WINDOW_NORMAL) 
@@ -22,7 +22,7 @@ try:
 
     draw = ImageDraw.Draw(pilfirst)
 
-    draw.text((396, 320), text, font=font)
+    draw.text((225, 278), text, font=font, fill=(0,0,255,225))
 
     processed = cv2.cvtColor(np.array(pilfirst), cv2.COLOR_RGB2BGR)
 
@@ -30,7 +30,7 @@ try:
     # the 396, 320 thing means it is placed at coords 396, 320, it is using hershy simplex font, 0, 0, 255 means rgb, so blue, 1.2 size of the font, the number 2 at the very end is the boldness of the text
  
     while True:
-        cv2.imshow(WindowName, [processed])
+        cv2.imshow(WindowName, processed)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break #this reads for the letter q to kill the screens
 
