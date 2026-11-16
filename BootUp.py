@@ -3,8 +3,10 @@ import sys
 from PIL import ImageFont, ImageDraw, Image
 import numpy as np
 import time
+import cursor
 
 def Startscreen():
+	cursor.hide()
     text = "INITIALIZING"
     try:
         currenttime = time.monotonic()
