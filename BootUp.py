@@ -7,11 +7,11 @@ import time
 text = "INITIALIZING"
 
 try:
-    currenttime = time.localtime()
-    futuretime = currenttime + 5
-
-    canvas = cv2.imread("Resources/canvas.png")
-
+	currenttime = time.monotonic()
+	futuretime = currenttime + 5
+	
+	canvas = cv2.imread("Resources/canvas.png")	
+	
     font = ImageFont.truetype("Resources/Ethnocentric-Regular.otf", 70)
     
     WindowName = "CAMS"
