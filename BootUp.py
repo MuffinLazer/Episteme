@@ -7,6 +7,9 @@ import time
 text = "INITIALIZING"
 
 try:
+    currenttime = time.localtime()
+    futuretime = currenttime + 5
+
     canvas = cv2.imread("Resources/canvas.png")
 
     font = ImageFont.truetype("Resources/Ethnocentric-Regular.otf", 70)
@@ -32,7 +35,8 @@ try:
  
     while True:
         cv2.imshow(WindowName, processed)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        currenttime = time.localtime()
+        if currenttime >= futuretime:
             break #this reads for the letter q to kill the screens
 
 except KeyboardInterrupt:
