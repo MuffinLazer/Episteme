@@ -7,13 +7,13 @@ import time
 text = "INITIALIZING"
 
 try:
-	currenttime = time.monotonic()
-	futuretime = currenttime + 5
-	
-	canvas = cv2.imread("Resources/canvas.png")	
-	
+    currenttime = time.monotonic()
+    futuretime = currenttime + 5
+        
+    canvas = cv2.imread("Resources/canvas.png")	
+        
     font = ImageFont.truetype("Resources/Ethnocentric-Regular.otf", 70)
-    
+        
     WindowName = "CAMS"
     cv2.namedWindow(WindowName, cv2.WINDOW_NORMAL) 
     cv2.moveWindow(WindowName, 0, 0)
@@ -30,9 +30,9 @@ try:
 
     processed = cv2.cvtColor(np.array(pilfirst), cv2.COLOR_RGB2BGR)
 
-    # cv2.putText(canvas, "INITIALIZING", (396, 320), cv2.FONT_HERSHEY_SIMPLEX, 4, (255, 0, 0), 2)
-    # the 396, 320 thing means it is placed at coords 396, 320, it is using hershy simplex font, 0, 0, 255 means rgb, so blue, 1.2 size of the font, the number 2 at the very end is the boldness of the text
- 
+        # cv2.putText(canvas, "INITIALIZING", (396, 320), cv2.FONT_HERSHEY_SIMPLEX, 4, (255, 0, 0), 2)
+        # the 396, 320 thing means it is placed at coords 396, 320, it is using hershy simplex font, 0, 0, 255 means rgb, so blue, 1.2 size of the font, the number 2 at the very end is the boldness of the text
+    
     while True:
         cv2.imshow(WindowName, processed)
         currenttime = time.localtime()
