@@ -8,6 +8,7 @@ text = "INITIALIZING"
 
 try:
     currenttime = time.monotonic()
+    currenttime = int(currenttime)
     futuretime = currenttime + 5
         
     canvas = cv2.imread("Resources/canvas.png")	
@@ -35,8 +36,8 @@ try:
     
     while True:
         cv2.imshow(WindowName, processed)
-        currenttime = time.localtime()
-        if currenttime >= futuretime:
+        currenttime = int(time.monotonic())
+        if currenttime == futuretime:
             break #this reads for the letter q to kill the screens
 
 except KeyboardInterrupt:
