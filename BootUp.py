@@ -3,6 +3,7 @@ import sys
 from PIL import ImageFont, ImageDraw, Image
 import numpy as np
 import time
+<<<<<<< HEAD
 import cursor
 from lxml import html
 import requests
@@ -18,11 +19,12 @@ defcon = defcon.replace("[","")
 defcon = defcon.replace("'","") #cleans it up to print it
 defcon = defcon.replace("]","")
 
+=======
+>>>>>>> 99cb1a24dcb4feae463709d7c67a42a86e245175
 
 def Startscreen():  
     try:
         text = "INITIALIZING"
-        cursor.hide()
         currenttime = time.monotonic()
         currenttime = int(currenttime) # monotonic time gives me the time of the clock in seconds in a float, which is super helpful as it lets us do basic math to find future time
         futuretime = currenttime + 5
