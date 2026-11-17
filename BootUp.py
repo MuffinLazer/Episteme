@@ -5,7 +5,6 @@ import numpy as np
 import time
 from lxml import html
 import requests
-import os 
 
 text = "INITIALIZING"
 status = "STATUS:"
@@ -22,7 +21,6 @@ defcon = defcon.replace("'","") #cleans it up to print it
 defcon = defcon.replace("]","")
 def Startscreen():  
     try:
-        os.system("unclutter -idle 10 &")
         currenttime = time.monotonic()
         currenttime = int(currenttime) # monotonic time gives me the time of the clock in seconds in a float, which is super helpful as it lets us do basic math to find future time
         futuretime = currenttime + 3
