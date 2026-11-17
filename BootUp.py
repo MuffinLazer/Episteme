@@ -4,6 +4,20 @@ from PIL import ImageFont, ImageDraw, Image
 import numpy as np
 import time
 import cursor
+from lxml import html
+import requests
+
+url = "https://www.defconlevel.com/current-level" #url of defcon website
+res = requests.get(url) # makes a var equal the website
+doc = html.fromstring(res.content) # this just gets only the content, instead of out of website stuff like status codes
+
+defcon = doc.xpath('/html/body/main/article/header/div[1]/div/span[2]/text()') # the full xpath to the thing with the defcon level plus text() seleceting the text
+
+defcon = str(defcon) # makes defcon into a string to use easier
+defcon = defcon.replace("[","")
+defcon = defcon.replace("'","") #cleans it up to print it
+defcon = defcon.replace("]","")
+
 
 def Startscreen():  
     try:
@@ -29,7 +43,9 @@ def Startscreen():
 
         draw = ImageDraw.Draw(pilfirst) # makes a drawing function that says we draw on pilfirst
 
-        draw.text((225, 278), text, font=font, fill=(0,0,255,225)) # draws our text
+        draw.text((225, 278), text, font=font, fill=(0,0,255,225)) # draws our W larp
+
+        draw.text((400, 278), defcon, font=font, fill=(0,0,255,225)) # draws defcon level 
 
         processed = cv2.cvtColor(np.array(pilfirst), cv2.COLOR_RGB2BGR) # converts it back to bgr
 
