@@ -3,8 +3,6 @@ import sys
 from PIL import ImageFont, ImageDraw, Image
 import numpy as np
 import time
-<<<<<<< HEAD
-import cursor
 from lxml import html
 import requests
 
@@ -18,9 +16,6 @@ defcon = str(defcon) # makes defcon into a string to use easier
 defcon = defcon.replace("[","")
 defcon = defcon.replace("'","") #cleans it up to print it
 defcon = defcon.replace("]","")
-
-=======
->>>>>>> 99cb1a24dcb4feae463709d7c67a42a86e245175
 
 def Startscreen():  
     try:
