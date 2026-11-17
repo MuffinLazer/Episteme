@@ -6,6 +6,9 @@ import time
 from lxml import html
 import requests
 
+text = "INITIALIZING"
+status = "STATUS:"
+
 url = "https://www.defconlevel.com/current-level" #url of defcon website
 res = requests.get(url) # makes a var equal the website
 doc = html.fromstring(res.content) # this just gets only the content, instead of out of website stuff like status codes
@@ -19,15 +22,15 @@ defcon = defcon.replace("]","")
 
 def Startscreen():  
     try:
-        text = "INITIALIZING"
         currenttime = time.monotonic()
         currenttime = int(currenttime) # monotonic time gives me the time of the clock in seconds in a float, which is super helpful as it lets us do basic math to find future time
-        futuretime = currenttime + 5
+        futuretime = currenttime + 3
             
         canvas = cv2.imread("Resources/canvas.png")	# reads the image file 
             
         font = ImageFont.truetype("Resources/Ethnocentric-Regular.otf", 70) # finds out font and selects the size of it
-            
+        fontsmall = ImageFont.truetype("Resources/Ethnocentric-Regular.otf", 35) # finds out font and selects the size of it
+        
         WindowName = "CAMS"
         cv2.namedWindow(WindowName, cv2.WINDOW_NORMAL) 
         cv2.moveWindow(WindowName, 0, 0)
@@ -40,9 +43,9 @@ def Startscreen():
 
         draw = ImageDraw.Draw(pilfirst) # makes a drawing function that says we draw on pilfirst
 
-        draw.text((225, 278), text, font=font, fill=(0,0,255,225)) # draws our W larp
-
-        draw.text((400, 278), defcon, font=font, fill=(0,0,255,225)) # draws defcon level 
+        draw.text((225, 215), text, font=font, fill=(0,0,255,225)) # draws our W larp
+        draw.text((410, 325), status, font=fontsmall, fill=(0,0,255,225)) 
+        draw.text((285, 365), defcon, font=font, fill=(0,0,255,225)) # draws defcon level 
 
         processed = cv2.cvtColor(np.array(pilfirst), cv2.COLOR_RGB2BGR) # converts it back to bgr
 
