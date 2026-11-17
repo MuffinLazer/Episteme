@@ -5,6 +5,7 @@ import numpy as np
 import time
 from lxml import html
 import requests
+import os 
 
 text = "INITIALIZING"
 status = "STATUS:"
@@ -19,9 +20,9 @@ defcon = str(defcon) # makes defcon into a string to use easier
 defcon = defcon.replace("[","")
 defcon = defcon.replace("'","") #cleans it up to print it
 defcon = defcon.replace("]","")
-
 def Startscreen():  
     try:
+        os.system("unclutter -idle 10 &")
         currenttime = time.monotonic()
         currenttime = int(currenttime) # monotonic time gives me the time of the clock in seconds in a float, which is super helpful as it lets us do basic math to find future time
         futuretime = currenttime + 3
@@ -48,7 +49,6 @@ def Startscreen():
         draw.text((285, 365), defcon, font=font, fill=(0,0,255,225)) # draws defcon level 
 
         processed = cv2.cvtColor(np.array(pilfirst), cv2.COLOR_RGB2BGR) # converts it back to bgr
-
             # cv2.putText(canvas, "INITIALIZING", (396, 320), cv2.FONT_HERSHEY_SIMPLEX, 4, (255, 0, 0), 2)
             # the 396, 320 thing means it is placed at coords 396, 320, it is using hershy simplex font, 0, 0, 255 means rgb, so blue, 1.2 size of the font, the number 2 at the very end is the boldness of the text
         while True:
